@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toma Izuoka HP</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-color: linear-gradient(135deg, #e3f2fd, #f0f8ff);
+      --text-color: #2e2e2e;
+      --card-bg: #ffffff;
+      --primary: #2d98f0;
+      --secondary: #1464bc;
+      --accent: #ecf0f1;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eeeeee;
+      --card-bg: #1e1e1e;
+      --primary: #64b5f6;
+      --secondary: #2196f3;
+      --accent: #2c2c2c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.4s ease-in-out;
+      animation: fadeInBody 1s ease;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .toggle-theme {
+      text-align: right;
+      margin-bottom: 1.5rem;
+    }
+
+    .toggle-theme button {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-theme button:hover {
+      background: var(--primary);
+    }
+
+    .profile-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 33vh;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .profile-card h1 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-top: 0.5rem;
+    }
+
+    .profile-info {
+      background: var(--accent);
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-top: 1.5rem;
+    }
+
+    .profile-info h2 {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .profile-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .profile-info li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+    }
+
+    .profile-info li::before {
+      content: "🔹";
+      margin-right: 0.5rem;
+    }
+
+    .career-section {
+      margin-top: 2rem;
+    }
+
+    .career-section h2 {
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--primary);
+    }
+
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-entry::before {
+      content: '📍';
+      position: absolute;
+      left: -5px;
+      top: 0;
+    }
+
+    .timeline-entry time {
+      display: inline-block;
+      font-weight: bold;
+      color: var(--secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 1rem;
+      background: var(--primary);
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .profile-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Toma Izuoka HP</header>
+
+  <div class="container">
+    <div class="toggle-theme">
+      <button onclick="toggleTheme()">🌗 テーマ切替</button>
+    </div>
+
+    <div class="profile-card">
+      <img src="https://assets.goal.com/images/v3/blt4a932d80e67ca1f6/Man_City_Player_Ratings.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="出岡 東真の写真" />
+      <h1></h1>
+
+      <div class="profile-info">
+        <h2>プロフィール</h2>
+        <ul>
+          <li><strong>名前：</strong>出岡 東真（いずおか とうま）</li>
+          <li><strong>生年月日：</strong>2003年12月11日</li>
+          <li><strong>趣味：</strong>サッカーとスノーボード</li>
+          <li><strong>出身地：</strong>三重県鈴鹿市</li>
+          <li><strong>研究内容：</strong>coming soon</li>
+          <li><strong>連絡先：</strong> <a href="mailto:touma-i@network.fuis.u-fukui.ac.jp">touma-i@network.fuis.u-fukui.ac.jp</a></li>
+        </ul>
+      </div>
+
+      <div class="career-section">
+        <h2>経歴</h2>
+        <div class="timeline">
+          <div class="timeline-entry"><time>2019年4月</time> 三重県立津西高校 普通科 入学</div>
+          <div class="timeline-entry"><time>2022年3月</time> 三重県立津西高校 普通科 卒業</div>
+          <div class="timeline-entry"><time>2022年4月</time> 福井大学 工学部 電気電子情報工学科 入学</div>
+          <div class="timeline-entry"><time>2025年3月</time> 橘研究室 配属</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Toma Izuoka. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const theme = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>
